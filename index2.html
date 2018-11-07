@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gif Test</title>
+    <style>
+        .gif-container {
+            position: relative;
+        }
+
+        .play {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .center-aligned {
+            display: flex;
+            box-align: center;
+            align-items: center;
+            box-pack: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+
+<body>
+    <section class="gif-container center-aligned">
+        <a href="#" class="playgif" data-animation="loop.gif" data-static="loop.jpg">
+            <img src="loop.jpg" width="400" height="400" />
+            <img src="play.png" width="50" height="50" class="play" />
+        </a>
+    </section>
+</body>
+<script>
+
+    Array.from(document.querySelectorAll('.playgif')).forEach(a => a.addEventListener('click', function (e) {
+        let animation = this.dataset['animation'];
+        let static = this.dataset['static'];
+
+        if (this.firstElementChild.src.split('/').pop() === static) {
+            this.firstElementChild.src = animation
+            this.firstElementChild.nextElementSibling.style.opacity = 0
+        } else {
+            this.firstElementChild.src = static
+            this.firstElementChild.nextElementSibling.style.opacity = 1
+        }
+    }))
+
+
+</script>
+
+</html>

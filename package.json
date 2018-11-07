@@ -1,0 +1,15 @@
+{
+  "name": "gif",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Asaad Saad",
+  "license": "ISC",
+  "dependencies": {
+    "gif-frames": "^1.0.0"
+  }
+}
